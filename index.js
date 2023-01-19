@@ -1,15 +1,15 @@
-window.roundTime = 60;
-window.timer = {
+let roundTime = 60;
+let timer = {
     start: 60,
     current: 60,
     mark: 0,
     interval: null
 };
-window.round = 1;
-window.player = ['Player 1', 'Player 2', 'Player 3'];
-window.scores = [0, 0, 0];
+let round = 1;
+let player = ['Player 1', 'Player 2', 'Player 3'];
+let scores = [0, 0, 0];
 
-window.roundRoles = [
+let roundRoles = [
     [1, 2, 3],
     [3, 1, 2],
     [2, 3, 1],
@@ -18,7 +18,7 @@ window.roundRoles = [
     [3, 2, 1]
 ];
 
-window.sfx = {
+let sfx = {
     buzz: new Audio('buzz.mp3'),
     score: new Audio('score.mp3'),
     pass: new Audio('pass.mp3'),
