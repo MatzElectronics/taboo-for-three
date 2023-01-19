@@ -41,8 +41,8 @@
                 <td><input id="round-time" type="text" size="12" value="60"/></td>
             </tr>
         </table>
-        <p><button onclick="saveSettings();">Save Settings</button></p>
-        <p><button onclick="resetSettings();">Reset All</button></p>
+        <p><button class="green" onclick="saveSettings();">Save Settings</button></p>
+        <p><button class="red" onclick="resetSettings();">Reset All</button></p>
         <p>&nbsp;</p>
         <h3>Credit where credit is due ;)</h3>
         <p>Based on rules written by Craig H Collins&nbsp;<a href="https://chcollins.com/100Billion/2011/08/3-player-taboo" target="_blank">in his blog post here.</a></p>
@@ -55,9 +55,9 @@
                 <td class="player-3-display">Player</td>
             </tr>
             <tr>
-                <td><button class="adjust" onclick="adjustScore(1, 1)">+</button></td>
-                <td><button class="adjust" onclick="adjustScore(2, 1)">+</button></td>
-                <td><button class="adjust" onclick="adjustScore(3, 1)">+</button></td>
+                <td><button class="adjust blue" onclick="adjustScore(1, 1)">+</button></td>
+                <td><button class="adjust blue" onclick="adjustScore(2, 1)">+</button></td>
+                <td><button class="adjust blue" onclick="adjustScore(3, 1)">+</button></td>
             </tr>
             <tr class="score-display">
                 <td class="player-1-score">0</td>
@@ -65,9 +65,9 @@
                 <td class="player-3-score">0</td>
             </tr>
             <tr>
-                <td><button class="adjust" onclick="adjustScore(1, -1)">&minus;</button></td>
-                <td><button class="adjust" onclick="adjustScore(2, -1)">&minus;</button></td>
-                <td><button class="adjust" onclick="adjustScore(3, -1)">&minus;</button></td>
+                <td><button class="adjust yellow" onclick="adjustScore(1, -1)">&minus;</button></td>
+                <td><button class="adjust yellow" onclick="adjustScore(2, -1)">&minus;</button></td>
+                <td><button class="adjust yellow" onclick="adjustScore(3, -1)">&minus;</button></td>
             </tr>
         </table>
 
