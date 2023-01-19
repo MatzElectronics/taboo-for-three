@@ -50,7 +50,7 @@ function navTo(panelId) {
     }
 
     $('#' + panelId).style.display = 'block';
-    $('#' + panelId + '-tab').style.backgroundColor = '#221952';
+    $('#' + panelId + '-tab').style.backgroundColor = '#4b515d';
 }
 
 function saveSettings() {

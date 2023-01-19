@@ -70,9 +70,6 @@
                 <td><button class="adjust" onclick="adjustScore(3, -1)">&minus;</button></td>
             </tr>
         </table>
-        <p>&nbsp;</p>
-        <hr />
-        <p>&copy; 2023 Matthew Matz.&nbsp;&nbsp;<a href="https://github.com/MatzElectronics/taboo-for-three" target="_blank">Source code available here</a>.</p>
 
     </div>
 
@@ -94,38 +91,38 @@
         <table>
             <tr>
                 <td>
-                    <button class="icon" onclick="action('buzz', true);">&#9100;</button>
+                    <button class="icon red" onclick="action('buzz', true);">&#9100;</button>
                 </td>
                 <td class="text" id="count-buzz">0</td>
                 <td>
-                    <button class="action" onclick="action('buzz');">BUZZ</button>
+                    <button class="action red" onclick="action('buzz');">BUZZ</button>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <button class="icon" onclick="action('pass', true);">&#9100;</button>
+                    <button class="icon yellow" onclick="action('pass', true);">&#9100;</button>
                 </td>
                 <td class="text" id="count-pass">0</td>
                 <td>
-                    <button class="action" onclick="action('pass');">PASS</button>
+                    <button class="action yellow" onclick="action('pass');">PASS</button>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <button class="icon" onclick="action('score', true);">&#9100;</button>
+                    <button class="icon green" onclick="action('score', true);">&#9100;</button>
                 </td>
                 <td class="text" id="count-score">0</td>
                 <td>
-                    <button class="action" onclick="action('score');">SCORE</button>
+                    <button class="action green" onclick="action('score');">SCORE</button>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <button class="icon" onclick="resetTimer(false);">&#10226;</button>
+                    <button class="icon blue" onclick="resetTimer(false);">&#10226;</button>
                 </td>
                 <td class="text" id="count-time">60.0</td>
                 <td>
-                    <button class="action" id="timer-play" onclick="playPauseTimer();"><i class="fa fa-play"></i></button>
+                    <button class="action blue" id="timer-play" onclick="playPauseTimer();"><i class="fa fa-play"></i></button>
                 </td>
             </tr>
         </table>
@@ -134,7 +131,7 @@
             <button class="icon" id="prev-round" onclick="nextRound(true);">&#9100;</button>
             &nbsp;
             -->
-            <button id="next-round" onclick="nextRound();">Next Round</button>
+            <button id="next-round" class="purple" onclick="nextRound();">Next Round</button>
         </p>
         <!--
     </div>
@@ -156,9 +153,7 @@
         </table>
     </div>
 
-    <p>&nbsp;</p>
-    <hr />
-    <p>&copy; 2023 Matthew Matz.&nbsp;&nbsp;<a href="https://github.com/MatzElectronics/taboo-for-three" target="_blank">Source code available here</a>.</p>
+    <footer>&copy; 2023 Matthew Matz.&nbsp;&nbsp;<a href="https://github.com/MatzElectronics/taboo-for-three" target="_blank">Source code available here</a>.</footer>
 
 	<script src="index.js"></script>
   </body>
