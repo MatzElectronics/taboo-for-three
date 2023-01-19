@@ -56,7 +56,7 @@ function navTo(panelId) {
 function saveSettings() {
     for (let i = 1; i < 4; i++) {
         player[i - 1] = $('#name-' + i).value;
-        $(`#player-${i}-display`).innerText = player[i - 1];
+        $$(`.player-${i}-display`).forEach(e => {e.innerText = player[i - 1]}); 
     }
 
     roundTime = parseInt($('#round-time').value || 60);
@@ -157,10 +157,23 @@ function action(doAction, undo) {
     }
 
     $('#count-' + doAction).innerText = newValue;
-    for (let i = 0; i < 3; i++) { $(`#player-${i + 1}-score`).innerText = scores[i]; }
+    for (let i = 0; i < 3; i++) { 
+        $$(`.player-${i + 1}-score`).forEach(e => {e.innerText = scores[i]});
+    }
 
     if (!undo) {
         sfx[doAction].play();
+    }
+
+    saveData();
+}
+
+function adjustScore(player, amount) {
+    player--;
+    scores[player] += amount;
+
+    for (let i = 0; i < 3; i++) { 
+        $$(`.player-${i + 1}-score`).forEach(e => {e.innerText = scores[i]});
     }
 
     saveData();
@@ -203,8 +216,8 @@ function resetSettings() {
     $('#next-round').disabled = true;
 
     for (let i = 0; i < 3; i++) { 
-        $(`#player-${i + 1}-score`).innerText = scores[i]; 
-        $(`#player-${i + 1}-display`).innerText = 'Player';
+        $$(`.player-${i + 1}-score`).forEach(e => {e.innerText = scores[i]}); 
+        $$(`.player-${i + 1}-display`).forEach(e => {e.innerText = 'Player'}); 
         $(`#role-${i + 1}-display`).innerText = 'Player';
     }
 
@@ -256,8 +269,8 @@ function loadData() {
         $('#next-round').disabled = true;
     
         for (let i = 0; i < 3; i++) {
-            $(`#player-${i + 1}-score`).innerText = scores[i]; 
-            $(`#player-${i + 1}-display`).innerText = player[i]; 
+            $$(`.player-${i + 1}-score`).forEach(e => {e.innerText = scores[i]}); 
+            $$(`.player-${i + 1}-display`).forEach(e => {e.innerText = player[i]}); 
         }
     
         displayRoles();

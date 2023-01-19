@@ -41,8 +41,32 @@
                 <td><input id="round-time" type="text" size="12" value="60"/></td>
             </tr>
         </table>
-        <p><button class="button-css" onclick="saveSettings();">Save Settings</button></p>
-        <p><button class="button-css" onclick="resetSettings();">Reset All</button></p>
+        <p><button onclick="saveSettings();">Save Settings</button></p>
+        <p><button onclick="resetSettings();">Reset All</button></p>
+        <p>&nbsp;</p>
+        <h2>Score Adjustment</h2>
+        <table class="player-display">
+            <tr>
+                <td class="player-1-display">Player</td>
+                <td class="player-2-display">Player</td>
+                <td class="player-3-display">Player</td>
+            </tr>
+            <tr>
+                <td><button class="adjust" onclick="adjustScore(1, 1)">+</button></td>
+                <td><button class="adjust" onclick="adjustScore(2, 1)">+</button></td>
+                <td><button class="adjust" onclick="adjustScore(3, 1)">+</button></td>
+            </tr>
+            <tr class="score-display">
+                <td class="player-1-score">0</td>
+                <td class="player-2-score">0</td>
+                <td class="player-3-score">0</td>
+            </tr>
+            <tr>
+                <td><button class="adjust" onclick="adjustScore(1, -1)">&minus;</button></td>
+                <td><button class="adjust" onclick="adjustScore(2, -1)">&minus;</button></td>
+                <td><button class="adjust" onclick="adjustScore(3, -1)">&minus;</button></td>
+            </tr>
+        </table>
     </div>
 
     <div id="game" class="panel">
@@ -63,47 +87,47 @@
         <table>
             <tr>
                 <td>
-                    <button class="button-css icon" onclick="action('buzz', true);">&#9100;</button>
+                    <button class="icon" onclick="action('buzz', true);">&#9100;</button>
                 </td>
                 <td class="text" id="count-buzz">0</td>
                 <td>
-                    <button class="button-css action" onclick="action('buzz');">BUZZ</button>
+                    <button class="action" onclick="action('buzz');">BUZZ</button>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <button class="button-css icon" onclick="action('pass', true);">&#9100;</button>
+                    <button class="icon" onclick="action('pass', true);">&#9100;</button>
                 </td>
                 <td class="text" id="count-pass">0</td>
                 <td>
-                    <button class="button-css action" onclick="action('pass');">PASS</button>
+                    <button class="action" onclick="action('pass');">PASS</button>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <button class="button-css icon" onclick="action('score', true);">&#9100;</button>
+                    <button class="icon" onclick="action('score', true);">&#9100;</button>
                 </td>
                 <td class="text" id="count-score">0</td>
                 <td>
-                    <button class="button-css action" onclick="action('score');">SCORE</button>
+                    <button class="action" onclick="action('score');">SCORE</button>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <button class="button-css icon" onclick="resetTimer(false);">&#10226;</button>
+                    <button class="icon" onclick="resetTimer(false);">&#10226;</button>
                 </td>
                 <td class="text" id="count-time">60.0</td>
                 <td>
-                    <button class="button-css action" id="timer-play" onclick="playPauseTimer();"><i class="fa fa-play"></i></button>
+                    <button class="action" id="timer-play" onclick="playPauseTimer();"><i class="fa fa-play"></i></button>
                 </td>
             </tr>
         </table>
         <p>
             <!--
-            <button class="button-css icon" id="prev-round" onclick="nextRound(true);">&#9100;</button>
+            <button class="icon" id="prev-round" onclick="nextRound(true);">&#9100;</button>
             &nbsp;
             -->
-            <button class="button-css" id="next-round" onclick="nextRound();">Next Round</button>
+            <button id="next-round" onclick="nextRound();">Next Round</button>
         </p>
         <!--
     </div>
@@ -113,14 +137,14 @@
         <h2>Points</h2>
         <table class="player-display">
             <tr>
-                <td id="player-1-display">Player</td>
-                <td id="player-2-display">Player</td>
-                <td id="player-3-display">Player</td>
+                <td class="player-1-display">Player</td>
+                <td class="player-2-display">Player</td>
+                <td class="player-3-display">Player</td>
             </tr>
             <tr class="score-display">
-                <td id="player-1-score">0</td>
-                <td id="player-2-score">0</td>
-                <td id="player-3-score">0</td>
+                <td class="player-1-score">0</td>
+                <td class="player-2-score">0</td>
+                <td class="player-3-score">0</td>
             </tr>
         </table>
     </div>
