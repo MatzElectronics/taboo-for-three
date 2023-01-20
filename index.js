@@ -18,14 +18,6 @@ let roundRoles = [
     [3, 2, 1]
 ];
 
-let sfx = {
-    buzz: new Audio('buzz.mp3'),
-    score: new Audio('score.mp3'),
-    pass: new Audio('pass.mp3'),
-    timer: new Audio('timer.mp3'),
-    start: new Audio('start.mp3'),
-}
-
 function getRoundRoles() {
     return roundRoles[(round - 1) % 6];
 }
@@ -56,12 +48,15 @@ function navTo(panelId) {
 function saveSettings() {
     for (let i = 1; i < 4; i++) {
         player[i - 1] = $('#name-' + i).value;
+        if (player[i - 1] == '') {
+            player[i - 1] = 'Player ' + i;
+            $('#name-' + i).value = player[i - 1];
+        }
         $$(`.player-${i}-display`).forEach(e => {e.innerText = player[i - 1]}); 
     }
 
     roundTime = parseInt($('#round-time').value || 60);
     $('#next-round').disabled = true;
-    //$('#prev-round').disabled = true;
 
     displayRoles();
     resetTimer(false);
@@ -106,7 +101,6 @@ function playPauseTimer() {
                 if (timer.current <= 0) {
                     timer.current = 0;
                     $('#next-round').disabled = false;
-                    //$('#prev-round').disabled = false;
                 }
                 $('#count-time').innerText = timer.current.toFixed(1);
             }
@@ -194,7 +188,6 @@ function nextRound(reset) {
     $('#count-pass').innerText = 0;
     $('#count-score').innerText = 0;
     $('#next-round').disabled = true;
-    //$('#prev-round').disabled = true;
 }
 
 function resetSettings() {

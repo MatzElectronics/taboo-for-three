@@ -10,6 +10,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <script>
+        window.sfx = {
+            buzz: new Audio('./buzz.wav'),
+            score: new Audio('./score.wav'),
+            pass: new Audio('./pass.wav'),
+            timer: new Audio('./timer.wav'),
+            start: new Audio('./start.wav'),
+        }
+    </script>
   </head>
   <body>
     
@@ -17,7 +27,6 @@
         <ul>
             <li id="setup-tab"><a onclick="navTo('setup');">Setup</a></li>
             <li id="game-tab"><a onclick="navTo('game');">Game</a></li>
-            <!--<li id="score-tab"><a onclick="navTo('score');">Score</a></li>-->
         </ul>
     </nav>
 
@@ -127,16 +136,8 @@
             </tr>
         </table>
         <p>
-            <!--
-            <button class="icon" id="prev-round" onclick="nextRound(true);">&#9100;</button>
-            &nbsp;
-            -->
             <button id="next-round" class="purple" onclick="nextRound();">Next Round</button>
         </p>
-        <!--
-    </div>
-
-    <div id="score" class="panel">-->
         <p>&nbsp;</p>
         <h2>Points</h2>
         <table class="player-display">
@@ -153,7 +154,9 @@
         </table>
     </div>
 
-    <footer>&copy; 2023 Matthew Matz.&nbsp;&nbsp;<a href="https://github.com/MatzElectronics/taboo-for-three" target="_blank">Source code available here</a>.</footer>
+    <footer>
+        &copy; 2023 Matthew Matz.&nbsp;&nbsp;<a href="https://github.com/MatzElectronics/taboo-for-three" target="_blank">Source code available here</a>.
+    </footer>
 
 	<script src="index.js"></script>
   </body>
