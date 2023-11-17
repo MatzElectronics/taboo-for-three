@@ -66,11 +66,11 @@ function saveSettings() {
 
 function displayRoles() {
     let roles = getRoundRoles();
-    let i = 0;
-    player.forEach((p) => {
-        $(`#role-${roles[i]}-display`).innerText = p;
-        i++;
-    });
+    let rds = [1,2,3];
+    for(var r = 0; r < rds.length; r++) //player.forEach((p) => {
+    {
+        $(`#role-${rds[r]}-display`).innerText = player[roles[r] - 1];
+    }
 }
 
 function playPauseTimer() {
